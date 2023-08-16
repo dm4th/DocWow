@@ -76,7 +76,7 @@ async function handler(req: Request) {
 
         // find similarities to stored document summaries
         const { data: matchData, error: matchError } = await supabaseClient.rpc(
-            "document_similarity", 
+            "document_similarity_citation", 
             { 
                 embedding: promptEmbedding,
                 record_id: record_id,

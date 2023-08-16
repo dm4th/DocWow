@@ -1,4 +1,4 @@
-drop function if exists "public"."document_similarity"(embedding vector, match_threshold double precision, match_count integer);
+drop function if exists "public"."document_similarity_citation"(embedding vector, match_threshold double precision, match_count integer);
 
 alter table "public"."document_chat_citations" add column "chat_history_id" uuid not null;
 

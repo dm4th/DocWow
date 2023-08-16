@@ -2,7 +2,7 @@ alter table "public"."document_chats" drop constraint "document_chats_record_fke
 
 alter table "public"."document_chats" drop constraint "document_chats_user_fkey";
 
-drop function if exists "public"."document_similarity"(embedding vector, record_id text, match_threshold double precision, match_count integer);
+drop function if exists "public"."document_similarity_citation"(embedding vector, record_id text, match_threshold double precision, match_count integer);
 
 alter table "public"."document_chats" add constraint "document_chats_record_id_fkey" FOREIGN KEY (record_id) REFERENCES medical_records(id) ON DELETE CASCADE not valid;
 

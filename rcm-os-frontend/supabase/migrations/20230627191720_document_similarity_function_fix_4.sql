@@ -1,6 +1,6 @@
-drop function if exists "public"."document_similarity"(embedding vector, record_id uuid, match_threshold double precision, match_count integer);
+drop function if exists "public"."document_similarity_citation"(embedding vector, record_id uuid, match_threshold double precision, match_count integer);
 
-CREATE OR REPLACE FUNCTION "public"."document_similarity"("embedding" vector(1536), "record_id" uuid, "match_threshold" double precision, "match_count" integer)
+CREATE OR REPLACE FUNCTION "public"."document_similarity_citation"("embedding" vector(1536), "record_id" uuid, "match_threshold" double precision, "match_count" integer)
 RETURNS TABLE (
     "type" text,
     "page" integer,
@@ -39,4 +39,4 @@ begin
 end;
 $$;
 
-ALTER FUNCTION "public"."document_similarity"("embedding" vector(1536), "record_id" uuid, "match_threshold" double precision, "match_count" integer) OWNER TO "postgres";
+ALTER FUNCTION "public"."document_similarity_citation"("embedding" vector(1536), "record_id" uuid, "match_threshold" double precision, "match_count" integer) OWNER TO "postgres";
